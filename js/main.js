@@ -8,6 +8,27 @@
     $.nom();
 }) ();
 
+
+function Damier(long, larg, dest) {
+    let damier = $(dest);
+
+    for (let i = 0; i < long; ++i) {
+
+        let tr = $('<tr />');
+
+        for (let j = 0; j < larg; ++j) {
+
+            if ((j + i) % 2 == 0)
+                tr.append($('<td />').addClass('case-blanche').html('B'));
+            else
+                tr.append($('<td />').addClass('case-noire').html('N'));
+        }
+
+        damier.append(tr);
+
+    }
+}
+
 let test;
 (function(){
     "use strict";
@@ -51,7 +72,7 @@ let test;
            // let case_blanche = $('.case-blanche');
             //let case_noire = $('.case-noire');
 
-            let damier = $('#damier');
+    /*        let damier = $('#damier');
 
             for (let i = 0; i < 8; ++i) {
 
@@ -67,13 +88,15 @@ let test;
 
                 damier.append(tr);
 
-              /*  $('#damier').append(
+               $('#damier').append(
                     // tr généré dynamiquement
 
                     $('<tr />').append($('<td />').addClass('case-blanche').html('B')),
                     $('<tr />').append($('<td />').addClass('case-noire').html('N'))
-                );*/
-            }
+                );
+            }*/
+
+            new Damier(50, 50, '#damier');
 
             /* on peut travailler sur le dom */
             $('.case-blanche').css(css_blanc).hover(function () {
