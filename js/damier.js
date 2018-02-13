@@ -50,9 +50,9 @@ let Damier;
             $(this).html(self.get_caractere());
             console.log (i, j);
             self.tab[i][j] = self.joueurencours;
-            if (self.ligne_faite())
-                alert("Vous avez gagné");
-            else
+          //  if (self.ligne_faite())
+            //    alert("Vous avez gagné");
+            //else
                 self.joueurencours = !self.joueurencours;
         };
 
